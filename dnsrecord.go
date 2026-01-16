@@ -169,7 +169,6 @@ func (api *API) GetDNSRecord(domainId int, id int) (*DNSRecord, error) {
 		return nil, err
 	}
 
-	return result.(*DNSRecord), nil
 }
 
 // ListDNSRecords returns a slice containing all visible DNS records for a domain
