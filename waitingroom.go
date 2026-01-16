@@ -187,8 +187,9 @@ func (api *API) DeleteWaitingRoom(waitingroom *WaitingRoom) (*WaitingRoom, error
 	definition := methods["deleteWaitingRoom"]
 	definition.Action = fmt.Sprintf(definition.Action, waitingroom.ID)
 
+	result, err := api.call(definition, waitingroom)
 	if err != nil {
 		return nil, err
 	}
-	return waitingroom, nil
+	return result.(*WaitingRoom), nil
 }
